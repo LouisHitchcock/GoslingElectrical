@@ -19,7 +19,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 100;
-    background: #000;
+        background: rgba(0, 0, 0, 0.3); /* Ensure background is visible */
     color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -167,7 +167,7 @@ header {
 /* Overlay Content */
 .hero .overlay {
     z-index: 2;
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay for readability */
     padding: 20px 30px;
     border-radius: 8px;
     color: #fff;
@@ -357,11 +357,11 @@ header {
     align-items: center;
     justify-content: left;
     text-align: left;
-    color: #000;
+    color: #fff;
 }
 
 .contact-content * {
-    color: #000;
+    color: #fff;
     text-align: left;
 }
 
@@ -399,7 +399,7 @@ header {
 }
 
 .contact-content a {
-    color: #000;
+    color: #fff;
     text-decoration: none;
     transition: color 0.3s;
 }
