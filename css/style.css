@@ -19,7 +19,7 @@ header {
     top: 0;
     z-index: 100;
     padding: 1em 2em;
-    background: rgba(0, 0, 0, 0.0); /* Make header slightly visible */
+    background: rgba(0, 0, 0, 0.8); /* Slightly visible background */
 }
 
 .navbar {
@@ -52,33 +52,79 @@ header {
     color: #f9c74f;
 }
 
+/* Hamburger Menu for Mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Menu */
+#mobile-menu {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+#mobile-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#mobile-menu ul li {
+    margin: 10px 0;
+}
+
+#mobile-menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+}
+
 /* Hero Section */
 .hero {
-    height: 75vh; /* Set a proportional height */
+    height: 83vh; /* Height for desktop */
     background: url('../images/header.jpeg') no-repeat center center/cover;
     position: relative;
     display: flex;
-    align-items: center; /* Vertically center the overlay */
-    padding-left: 50px; /* Space between the overlay and the left edge */
-    padding-right: 50px; /* Optional for spacing on the right */
-    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    align-items: center; /* Vertically center content */
+    justify-content: flex-start; /* Align to the left */
+    padding: 20px 50px; /* Add horizontal padding */
+    box-sizing: border-box;
 }
 
 /* Overlay Content */
 .hero .overlay {
     z-index: 2;
-    background: rgba(0, 0, 0, 0.0); /* Dark overlay for readability */
-    padding: 30px 40px; /* Adjust padding for better spacing */
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+    padding: 20px 30px;
     border-radius: 8px;
     color: #fff;
     text-align: left; /* Align text to the left */
-    max-width: 600px; /* Prevent overly wide overlay on large screens */
-    margin-bottom: auto; /* Push overlay away from swoop */
-    margin-top: auto; /* Keep it vertically centered */
+    max-width: 600px; /* Restrict width for readability */
+    margin-bottom: 300px;
+    margin-top:150px;
 }
 
 .hero h1 {
-    font-size: 2.5em;
+    font-size: 2.5em; /* Desktop size */
     margin-bottom: 0.5em;
 }
 
@@ -104,12 +150,10 @@ header {
     color: #000;
 }
 
-
-
 /* Swoop SVG */
 .swoop {
     position: absolute;
-    bottom: -50px;
+    bottom: 0;
     left: 0;
     width: 100%;
     height: auto;
@@ -133,4 +177,37 @@ header {
     font-size: 1.2em;
     max-width: 800px;
     margin: 0 auto;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Show hamburger menu */
+    }
+
+    nav ul {
+        display: none; /* Hide desktop menu */
+    }
+
+    #mobile-menu.visible {
+        display: flex;
+    }
+
+    .hero {
+        height: 60vh; /* Smaller height for mobile */
+    }
+
+    .hero h1 {
+        font-size: 1.8em; /* Adjust font size */
+    }
+
+    .hero p {
+        font-size: 1em; /* Adjust paragraph size */
+    }
+
+    .hero .overlay {
+        max-width: 100%; /* Full-width overlay for mobile */
+        margin-bottom: auto; /* Prevent touching swoop */
+        text-align: center; /* Align text to the center */
+    }
 }

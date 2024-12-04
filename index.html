@@ -14,17 +14,22 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="navbar">
-            <div class="logo">Gosling Electrical Services</div>
-            <nav>
-                <ul>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+    <div class="navbar">
+        <div class="logo">GOSLING ELECTRICAL SERVICES</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-    </header>
+        <nav id="mobile-menu" class="hidden">
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <!-- Hero Section -->
     <section class="hero">
