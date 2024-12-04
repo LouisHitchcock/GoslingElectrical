@@ -152,8 +152,6 @@ header {
 
 
 
-
-
 /* Hero Section */
 .hero {
     height: 83vh; /* Height for desktop */
@@ -214,4 +212,33 @@ header {
     width: 100%;
     height: auto;
     z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh; /* Adjust height for smaller screens */
+        padding: 15px 20px; /* Reduce padding for mobile */
+        justify-content: center; /* Center content horizontally */
+    }
+
+    .hero .overlay {
+        padding: 15px 20px; /* Reduce padding */
+        max-width: 90%; /* Expand overlay width */
+        margin: 0 auto; /* Center overlay vertically and horizontally */
+        text-align: center; /* Center-align text for better readability */
+    }
+
+    .hero h1 {
+        font-size: 1.8em; /* Adjust heading size */
+    }
+
+    .hero p {
+        font-size: 1em; /* Adjust paragraph font size */
+    }
+
+    .hero .btn {
+        font-size: 0.9em; /* Adjust button font size */
+        padding: 8px 15px; /* Reduce button padding */
+    }
 }
