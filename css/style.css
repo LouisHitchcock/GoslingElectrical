@@ -242,3 +242,168 @@ header {
         padding: 8px 15px; /* Reduce button padding */
     }
 }
+
+
+
+
+/* Position the arrows */
+.swiper-button-next,
+.swiper-button-prev {
+    position: absolute; /* Position relative to the container */
+    top: 50%; /* Align vertically to the middle */
+    transform: translateY(-50%); /* Center them */
+    z-index: 10; /* Ensure they stay above other content */
+    background-color: #fff; /* White background */
+    border: 2px solid #333; /* Black border */
+    border-radius: 50%; /* Make them circular */
+    width: 40px; /* Ensure circular size */
+    height: 40px; /* Ensure circular size */
+    display: flex; /* Flexbox to center arrow icons */
+    align-items: center;
+    justify-content: center;
+    color: #333; /* Black arrow color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    cursor: pointer;
+    box-sizing: border-box; /* Ensure consistent sizing */
+}
+
+
+
+/* Pagination styling */
+.swiper-pagination {
+    text-align: center;
+    bottom: 10px; /* Position below the swiper */
+}
+
+/* General styling for pagination dots */
+.swiper-pagination-bullet {
+    width: 12px; /* Size of the dots */
+    height: 12px;
+    background-color: #ccc; /* Default color */
+    opacity: 0.7; /* Default transparency */
+    border-radius: 50%; /* Make dots circular */
+    margin: 0 5px; /* Spacing between dots */
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* Smooth transitions */
+}
+
+/* Styling for the active dot */
+.swiper-pagination-bullet-active {
+    background-color: #000; /* Active dot color (black) */
+    opacity: 1; /* Fully opaque */
+}
+
+
+/* Swiper container styling */
+.swiper-container {
+    position: relative; /* Ensure arrows are positioned relative to the container */
+    max-width: 1000px; /* Maximum width for desktop */
+    margin: 0 auto; /* Center the swiper container */
+    padding: 0px 20px 0px 20px;
+}
+
+/* Swiper wrapper styling */
+.swiper-wrapper {
+    text-align: center; /* Align text */
+}
+
+/* Swiper slide styling */
+.swiper-slide {
+    text-align: center;
+    padding: 0px 20px 0px 20px;
+    font-size: 1.2rem;
+    line-height: 1.6; /* Improve text readability */
+    background: #fff;
+    color: #000; /* Text color */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .swiper-container {
+        padding: 10px; /* Reduce padding on mobile */
+    }
+
+    .swiper-slide {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        top: 50%; /* Ensure arrows remain vertically aligned */
+        width: 30px; /* Reduce arrow size */
+        height: 30px;
+    }
+}
+
+.testimonials-header {
+    text-align: center;
+    font-size: 2rem; /* Size for desktop */
+    color: #000; /* Text color */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .testimonials-header {
+        font-size: 1.5rem; /* Smaller size for mobile */
+    }
+}
+
+
+.contact-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    text-align: left;
+    color: #000;
+}
+
+.contact-content * {
+    color: #000;
+    text-align: left;
+}
+
+.contact-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.contact-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.contact-content {
+    z-index: 1;
+    max-width: 900px;
+    padding: 20px 100px;
+}
+
+.contact-content h1 {
+    font-family: "Abel", sans-serif;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.contact-content p {
+    font-size: 1.5em;
+}
+
+.contact-content a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-content a:hover {
+    color: #bbb;
+}
