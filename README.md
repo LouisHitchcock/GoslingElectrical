@@ -15,9 +15,6 @@ A professional and responsive website for **Gosling Electrical Services**, provi
 - **JavaScript**
 - **Swiper.js** (for testimonials)
 
-## 📸 Screenshots
-![Homepage Preview](./screenshots/homepage.png)
-
 ## 📂 Project Structure
 ```
 /project-root
@@ -52,7 +49,7 @@ A professional and responsive website for **Gosling Electrical Services**, provi
 - [ ] Improve accessibility (ARIA support).
 
 ## 🏆 Contributors
-- **[Your Name]** - Developer  
+- **Louis Hitchcock** - Developer  
 - **Gosling Electrical Services** - Business Owner  
 
 ## 📜 License
