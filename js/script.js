@@ -24,3 +24,12 @@ const swiper = new Swiper('.swiper-container', {
         },
     },
 });
+
+
+function toggleMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburger = document.querySelector('.hamburger');
+    
+    mobileMenu.classList.toggle('active');
+    hamburger.classList.toggle('hidden');
+}
