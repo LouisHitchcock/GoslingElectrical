@@ -1,0 +1,49 @@
+.gallery-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Fixed number of columns */
+    grid-auto-rows: 200px; /* Set a base row height */
+    gap: 20px; /* Consistent gaps between images */
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s, opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+.gallery img.loaded {
+    opacity: 1;
+}
+
+.gallery img.portrait {
+    grid-row: span 2; /* Portrait images span 2 rows */
+}
+
+
+.Title{
+    padding:12vh 0 0 0;
+    text-align: center;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1000px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr); /* Adjust columns for smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* Adjust columns for mobile screens */
+        grid-auto-rows: 150px; /* Adjust base row height for mobile */
+    }
+}
