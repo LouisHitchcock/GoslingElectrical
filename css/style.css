@@ -43,17 +43,24 @@ header {
 /* Logo Styling */
 .logo {
     display: flex;
-    align-items: center; /* Align logo image and text vertically */
-    gap: 0.5rem; /* Add space between image and text */
-    color: #fff; /* Ensure text is white */
-    font-size: 1.5em; /* Maintain font size */
-    font-weight: bold;
-    text-transform: uppercase; /* Uppercase styling */
+    align-items: center;
+    gap: 0.5rem; /* Add spacing between elements if needed */
+    text-decoration: none; /* Remove underline */
 }
 
 .logo-icon {
     height: 40px; /* Adjust the size of the logo */
     width: auto; /* Maintain aspect ratio */
+}
+
+.mobile-logo-icon {
+    height: 80px; /* Adjust the size of the logo */
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* Hide the hamburger menu */
+.hamburger {
+    display: none; /* Completely hide the hamburger */
 }
 
 
@@ -81,91 +88,12 @@ header {
     color: #f9c74f;
 }
 
-/* Hamburger Menu */
-.hamburger {
+
+/* Default: Hide mobile logo */
+.mobile-logo {
     display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    z-index: 101;
-    background: none;
-    border: none;
 }
 
-.hamburger .line {
-    width: 25px;
-    height: 3px;
-    background: white;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-.hamburger.active .line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger.active .line:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active .line:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Mobile Menu */
-#mobile-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.9); /* Ensure background is visible */
-    color: #fff; /* Ensure text is white */
-    height: 0; /* Start closed */
-    overflow: hidden;
-    transition: height 0.5s ease-in-out; /* Smooth wipe-down effect */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
-    z-index: 100;
-}
-
-#mobile-menu.menu-visible {
-    height: 100vh; /* Expand to full screen */
-}
-
-#mobile-menu ul {
-    list-style: none;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-}
-
-#mobile-menu ul li a {
-    text-decoration: none;
-    color: #fff; /* Ensure menu items are white */
-    font-size: 1.5em;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-#mobile-menu ul li a:hover {
-    color: #f9c74f;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex; /* Show hamburger on mobile */
-    }
-
-    #desktop-menu {
-        display: none; /* Hide desktop menu on mobile */
-    }
-}
 
 
 /* Hero Section */
@@ -339,7 +267,7 @@ header {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
     .hero {
         height: 70vh;
         padding: 15px;
@@ -362,4 +290,69 @@ header {
     .testimonials-header {
         font-size: 1.5rem;
     }
+}
+
+
+/* Additional Responsive Styles for Mobile Compatibility */
+@media (max-width: 768px) {
+    /* Hero Section */
+    .hero {
+        height: 55vh; /* Reduce height for smaller screens */
+        padding: 20px; /* Adjust padding for spacing */
+    }
+
+    .hero h1 {
+        font-size: 1.8em; /* Reduce text size for mobile */
+    }
+
+    .hero p {
+        font-size: 1em; /* Adjust paragraph size */
+    }
+
+    /* Services Section */
+    .servicesGrid {
+        grid-template-columns: 1fr; /* Stack services vertically */
+        gap: 15px; /* Reduce spacing */
+    }
+
+    /* Testimonials Section */
+    .swiper-slide {
+        font-size: 1rem; /* Adjust font size for better readability */
+        padding: 15px; /* Adjust padding for spacing */
+    }
+
+    /* Align Pagination Dots Below Testimonials */
+    .swiper-pagination {
+        bottom: 10px; /* Adjust positioning of dots */
+    }
+
+    /* Testimonial Navigation Dots */
+    .swiper-pagination-bullet {
+        width: 8px; /* Smaller dots for mobile */
+        height: 8px;
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger on mobile */
+    }
+
+    #desktop-menu {
+        display: none; /* Hide desktop menu on mobile */
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .mobile-logo {
+        height: 40px; /* Adjust the size of the logo */
+        display: block;
+    }
+
+    .navbar {
+        margin-bottom: 2em;
+    }
+
+
+
 }
