@@ -1,3 +1,31 @@
+const swiper = new Swiper('.swiper-container', {
+    loop: true, // Enable infinite scrolling
+    slidesPerView: 1, // Show one slide at a time
+    centeredSlides: true, // Always center the current slide
+    spaceBetween: 20, // Add spacing between slides
+    autoplay: {
+        delay: 5000, // Auto-scroll every 5 seconds
+        disableOnInteraction: false, // Keep autoplay running after interaction
+    },
+    pagination: {
+        el: '.swiper-pagination', // Enable pagination dots
+        clickable: true, // Make the dots clickable
+    },
+    on: {
+        slideChangeTransitionStart: function () {
+            // Remove active class and fade out previous slide
+            document.querySelectorAll('.swiper-slide').forEach(slide => {
+                slide.classList.remove('activeTestimonial');
+            });
+        },
+        slideChangeTransitionEnd: function () {
+            // Add active class to new slide and fade it in
+            document.querySelector('.swiper-slide-active').classList.add('activeTestimonial');
+        },
+    },
+});
+
+
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
 
@@ -11,48 +39,4 @@ hamburger.addEventListener('click', () => {
         mobileMenu.classList.remove('menu-hidden');
         mobileMenu.classList.add('menu-visible');
     }
-});
-
-
-
-new Swiper('.swiper-container', {
-    loop: true,
-    autoplay: {
-        delay: 3000,
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-});
-
-const swiper = new Swiper('.swiper-container', {
-    loop: true, // Enables infinite looping
-    autoplay: {
-        delay: 3000, // Time between slides in milliseconds
-        disableOnInteraction: false, // Continue autoplay after manual interaction
-    },
-    navigation: {
-        nextEl: '.swiper-button-next', // Next arrow
-        prevEl: '.swiper-button-prev', // Previous arrow
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const swiper = new Swiper('.swiper-container', {
-        loop: true, // Enable looping
-        autoplay: {
-            delay: 3000, // Automatically transition every 3 seconds
-            disableOnInteraction: false, // Keep autoplay after user interaction
-        },
-        pagination: {
-            el: '.swiper-pagination', // Add pagination container
-            clickable: true, // Allow users to click on the dots to navigate
-        },
-    });
 });

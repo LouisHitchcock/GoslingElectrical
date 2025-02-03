@@ -19,10 +19,11 @@ header {
     width: 100%;
     top: 0;
     z-index: 100;
-        background: rgba(0, 0, 0, 0.3); /* Ensure background is visible */
+    background: rgba(0, 0, 0, 0.3);
     color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 
 .navbar {
     display: flex;
@@ -38,6 +39,23 @@ header {
     color: #fff;
     text-transform: uppercase;
 }
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center; /* Align logo image and text vertically */
+    gap: 0.5rem; /* Add space between image and text */
+    color: #fff; /* Ensure text is white */
+    font-size: 1.5em; /* Maintain font size */
+    font-weight: bold;
+    text-transform: uppercase; /* Uppercase styling */
+}
+
+.logo-icon {
+    height: 40px; /* Adjust the size of the logo */
+    width: auto; /* Maintain aspect ratio */
+}
+
 
 /* Desktop Navigation Menu */
 #desktop-menu {
@@ -150,35 +168,29 @@ header {
 }
 
 
-
-
 /* Hero Section */
 .hero {
-    height: 83vh; /* Height for desktop */
+    height: 83vh;
     background: url('../images/header.jpeg') no-repeat center center/cover;
     position: relative;
     display: flex;
-    align-items: center; /* Vertically center content */
-    justify-content: flex-start; /* Align to the left */
-    padding: 20px 50px; /* Add horizontal padding */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
     box-sizing: border-box;
 }
 
-/* Overlay Content */
 .hero .overlay {
-    z-index: 2;
-    background: rgba(0, 0, 0, 0.3); /* Dark overlay for readability */
-    padding: 20px 30px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
     border-radius: 8px;
     color: #fff;
-    text-align: left; /* Align text to the left */
-    max-width: 600px; /* Restrict width for readability */
-    margin-bottom: 300px;
-    margin-top: 150px;
+    max-width: 600px;
 }
 
 .hero h1 {
-    font-size: 2.5em; /* Desktop size */
+    font-size: 2.5em;
     margin-bottom: 0.5em;
 }
 
@@ -204,7 +216,7 @@ header {
     color: #000;
 }
 
-/* Swoop SVG */
+/* Swoop */
 .swoop {
     position: absolute;
     bottom: 0;
@@ -214,196 +226,140 @@ header {
     z-index: 1;
 }
 
-/* Responsive Design */
+.testimonials {
+    max-width: 80vw;
+
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+}
+
+
+/* Testimonials Container */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Smooth swipe and fade effect */
+}
+
+/* Fading Effect for Non-Active Slides */
+.swiper-slide.swiper-slide-prev,
+.swiper-slide.swiper-slide-next {
+    opacity: 0; /* Fade out non-active slides */
+}
+
+/* The currently active testimonial */
+.swiper-slide.activeTestimonial {
+    opacity: 1; /* Fully visible */
+}
+
+/* Pagination Dots */
+.swiper-pagination {
+    position: relative; /* Positioned below testimonials */
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* Spacing between dots */
+    margin-top: 30px;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #ccc; /* Default dot color */
+    border-radius: 50%;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+    background: #383838; /* Active dot color */
+    opacity: 1;
+}
+
+
+.testimonials-header {
+    padding-bottom:20px;
+}
+
+.servicesTitle{
+    padding-bottom:20px;
+}
+
+.footer {
+    bottom: 0;
+    font-family: "Source Code Pro", monospace;
+    font-weight: 400;
+    font-style: normal;
+    padding: 130px 0 100px 0;
+    text-align: center;
+}
+
+
+/* Separator Line Below Testimonials */
+.line {
+    margin: 20px auto;
+    border-bottom: 5px solid #000;
+    width: 90%;
+}
+
+/* Services Section */
+.servicesContainer {
+    padding: 40px 20px;
+    max-width: 80vw;
+    margin: 0 auto;
+}
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 80vw;
+}
+
+.serviceGridItem {
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     .hero {
-        height: 70vh; /* Adjust height for smaller screens */
-        padding: 15px 20px; /* Reduce padding for mobile */
-        justify-content: center; /* Center content horizontally */
-    }
-
-    .hero .overlay {
-        padding: 15px 20px; /* Reduce padding */
-        max-width: 90%; /* Expand overlay width */
-        margin: 0 auto; /* Center overlay vertically and horizontally */
-        text-align: center; /* Center-align text for better readability */
+        height: 70vh;
+        padding: 15px;
     }
 
     .hero h1 {
-        font-size: 1.8em; /* Adjust heading size */
+        font-size: 1.8em;
     }
 
     .hero p {
-        font-size: 1em; /* Adjust paragraph font size */
-    }
-
-    .hero .btn {
-        font-size: 0.9em; /* Adjust button font size */
-        padding: 8px 15px; /* Reduce button padding */
-    }
-}
-
-
-
-
-/* Position the arrows */
-.swiper-button-next,
-.swiper-button-prev {
-    position: absolute; /* Position relative to the container */
-    top: 50%; /* Align vertically to the middle */
-    transform: translateY(-50%); /* Center them */
-    z-index: 10; /* Ensure they stay above other content */
-    background-color: #fff; /* White background */
-    border: 2px solid #333; /* Black border */
-    border-radius: 50%; /* Make them circular */
-    width: 40px; /* Ensure circular size */
-    height: 40px; /* Ensure circular size */
-    display: flex; /* Flexbox to center arrow icons */
-    align-items: center;
-    justify-content: center;
-    color: #333; /* Black arrow color */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
-    cursor: pointer;
-    box-sizing: border-box; /* Ensure consistent sizing */
-}
-
-
-
-/* Pagination styling */
-.swiper-pagination {
-    text-align: center;
-    bottom: 10px; /* Position below the swiper */
-}
-
-/* General styling for pagination dots */
-.swiper-pagination-bullet {
-    width: 12px; /* Size of the dots */
-    height: 12px;
-    background-color: #ccc; /* Default color */
-    opacity: 0.7; /* Default transparency */
-    border-radius: 50%; /* Make dots circular */
-    margin: 0 5px; /* Spacing between dots */
-    transition: background-color 0.3s ease, opacity 0.3s ease; /* Smooth transitions */
-}
-
-/* Styling for the active dot */
-.swiper-pagination-bullet-active {
-    background-color: #000; /* Active dot color (black) */
-    opacity: 1; /* Fully opaque */
-}
-
-
-/* Swiper container styling */
-.swiper-container {
-    position: relative; /* Ensure arrows are positioned relative to the container */
-    max-width: 1000px; /* Maximum width for desktop */
-    margin: 0 auto; /* Center the swiper container */
-    padding: 0px 20px 0px 20px;
-}
-
-/* Swiper wrapper styling */
-.swiper-wrapper {
-    text-align: center; /* Align text */
-}
-
-/* Swiper slide styling */
-.swiper-slide {
-    text-align: center;
-    padding: 0px 20px 0px 20px;
-    font-size: 1.2rem;
-    line-height: 1.6; /* Improve text readability */
-    background: #fff;
-    color: #000; /* Text color */
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    .swiper-container {
-        padding: 10px; /* Reduce padding on mobile */
-    }
-
-    .swiper-slide {
-        font-size: 1rem; /* Adjust font size for smaller screens */
+        font-size: 1em;
     }
 
     .swiper-button-next,
     .swiper-button-prev {
-        top: 50%; /* Ensure arrows remain vertically aligned */
-        width: 30px; /* Reduce arrow size */
+        width: 30px;
         height: 30px;
     }
-}
 
-.testimonials-header {
-    text-align: center;
-    font-size: 2rem; /* Size for desktop */
-    color: #000; /* Text color */
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
     .testimonials-header {
-        font-size: 1.5rem; /* Smaller size for mobile */
+        font-size: 1.5rem;
     }
-}
-
-
-.contact-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    text-align: left;
-    color: #fff;
-}
-
-.contact-content * {
-    color: #fff;
-    text-align: left;
-}
-
-.contact-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
-}
-
-.contact-background img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.contact-content {
-    z-index: 1;
-    max-width: 900px;
-    padding: 20px 100px;
-}
-
-.contact-content h1 {
-    font-family: "Abel", sans-serif;
-    font-size: 3em;
-    margin-bottom: 20px;
-}
-
-.contact-content p {
-    font-size: 1.5em;
-}
-
-.contact-content a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.contact-content a:hover {
-    color: #bbb;
 }

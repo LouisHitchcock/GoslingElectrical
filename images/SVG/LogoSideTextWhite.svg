@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2520.73 973.85">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        font-family: BebasNeuePro-ExpEb, 'Bebas Neue Pro';
+        font-size: 348.73px;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <g id="Side_Text_White" data-name="Side Text White">
+    <g>
+      <g>
+        <path class="cls-2" d="M466.07,42.63v63.43h325.42v728.07H63.43V106.06h353v161.85c-14.83,2.63-26.2,15.64-26.2,31.2v63.23c-50.79,13.4-88.25,59.65-88.25,114.65h237.17c0-54-36.11-99.54-85.49-113.87v-64.01c0-14.58-9.98-26.91-23.44-30.58V42.63H0v860.44h860.44V42.63h-394.37Z"/>
+        <path class="cls-2" d="M422.99,571.09c30.65,0,55.49-24.84,55.49-55.49h-110.98c0,30.65,24.84,55.49,55.49,55.49Z"/>
+      </g>
+      <text class="cls-3" transform="translate(911.69 296.42)"><tspan class="cls-4"><tspan x="0" y="0">GOSLING </tspan></tspan><tspan class="cls-4" x="0" y="296.87">ELECTRI</tspan><tspan class="cls-5" x="1099.2" y="296.87">C</tspan><tspan class="cls-4" x="1270.07" y="296.87">AL</tspan><tspan class="cls-4" x="0" y="593.74">SE</tspan><tspan class="cls-6" x="334.08" y="593.74">R</tspan><tspan class="cls-4" x="512.63" y="593.74">VIC</tspan><tspan class="cls-1" x="949.24" y="593.74">E</tspan><tspan class="cls-4" x="1114.54" y="593.74">S</tspan></text>
+    </g>
+  </g>
+</svg>

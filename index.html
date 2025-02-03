@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gosling Electrical</title>
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link rel="icon" type="image/x-icon" href="./images/SVG/LogoWhite.svg">
 
 </head>
 <body>
     <header>
         <div class="navbar">
-            <div class="logo">Gosling Electrical Services</div>
+
+            <div class="logo">
+                 <img src="./images/SVG/LogoWhite.svg" class="logo-icon">
+                    Gosling Electrical Services
+            </div>
+
             <nav id="desktop-menu">
                 <ul>
                     <li><a href="#services">Services</a></li>
@@ -34,40 +43,73 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="overlay">
-            <h1>Electrical Experts in Crawley</h1>
-            <p>Gosling Electrical Services is committed to offering reliable, high-quality services to meet the needs of our residential customers.</p>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="overlay">
+        <h1>Electrical Experts in Crawley</h1>
+        <p>Gosling Electrical Services is committed to offering reliable, high-quality services to meet the needs of our residential customers.</p>
             <a href="#contact" class="btn">Contact Us</a>
-        </div>
-        <svg class="swoop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#ffffff" fill-opacity="1" d="M0,96L80,106.7C160,117,320,139,480,154.7C640,171,800,181,960,176C1120,171,1280,149,1360,138.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
-        </svg>
-    </section>
-
-    <!-- Content Section -->
-    <section class="content-section">
-        <div class="content">
-
-
-<h2 class="testimonials-header">Client Testimonials</h2>
-<div class="swiper-container">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">"Had the pleasure of a visit from Dan today to install an outside twin electric outlet with an added remote switch. Arrived promptly at the appointed time and was so friendly, professional and tidy while here at work. Great job and all for a reasonable price. Highly recommend for all your electrical needs" - Bill Bayley</div>
-        <div class="swiper-slide">"Danny came over to remove one pendant light fitting and to move another.  He did a wonderful job at a very reasonable price. Would highly recommend!  Thanks Danny 👍" - Clare Costa</div>
-        <div class="swiper-slide">"Thanks for the fantastic jobs you did at our properties. Very reliable and reasonably priced. Will use again." - Derek Perry</div>
-        <div class="swiper-slide">"Thank you Danny, great job putting new lights up in the lounge. On time, great conversation and so reliable. Super accommodating to change the time, wouldn't use anyone else. 👍" - Jo Elliott</div>
-        <div class="swiper-slide">"Dan was a Facebook recommendation and those people were all correct! Quick to respond, communicative throughout the process and clearly very knowledgeable. I would definitely recommend Gosling Electrical Services. Thanks Dan!" - Craig Martin</div>
-        <div class="swiper-slide">"Danny was plucked from Facebook by chance when I needed a small lighting job done. Quick to respond and accept the job. Kept me informed about parts needed and their cost. Arrived on time, completed job in a tidy fashion at a reasonable and acceptable cost. My wife can now have a bath with the lights on!! Happy days" - Bill Chaffe</div>
     </div>
-        <!-- Add pagination here -->
-    <div class="swiper-pagination"></div>   
-</div>
+        <svg class="swoop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 125">
+            <path class="cls-1" fill="#fff" d="M1360,42.7c-80,10.3-240,32.3-400,37.3s-320-5-480-21.3C320,43,160,21,80,10.7L0,0v131.66h1440V32l-80,10.7Z"/>
+        </svg>
+</section>
 
+
+<div class="servicesContainer">
+    <h2 class="servicesTitle">Our Services:</h2>
+    <div class="servicesGrid">
+        <div class="serviceGridItem">
+            <h3>Service 1</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, necessitatibus.</p>
         </div>
-    </section>
+
+        <div class="serviceGridItem">
+            <h3>Service 2</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, necessitatibus.</p>
+        </div>
+
+        <div class="serviceGridItem">
+            <h3>Service 3</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, necessitatibus.</p>
+        </div>
+
+        <div class="serviceGridItem">
+            <h3>Service 4</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, necessitatibus.</p>
+        </div>
+    </div>
+</div>
     
+<div class="line"></div>
+
+
+<section class="testimonials">
+    <h2 class="testimonials-header">Client Testimonials</h2>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">"Had the pleasure of a visit from Dan today to install an outside twin electric outlet with an added remote switch. Arrived promptly at the appointed time and was so friendly, professional and tidy while here at work. Great job and all for a reasonable price. Highly recommend for all your electrical needs" - Bill Bayley</div>
+            <div class="swiper-slide">"Danny came over to remove one pendant light fitting and to move another. He did a wonderful job at a very reasonable price. Would highly recommend! Thanks Danny 👍" - Clare Costa</div>
+            <div class="swiper-slide">"Thanks for the fantastic jobs you did at our properties. Very reliable and reasonably priced. Will use again." - Derek Perry</div>
+            <div class="swiper-slide">"Thank you Danny, great job putting new lights up in the lounge. On time, great conversation and so reliable. Super accommodating to change the time, wouldn't use anyone else. 👍" - Jo Elliott</div>
+            <div class="swiper-slide">"Dan was a Facebook recommendation and those people were all correct! Quick to respond, communicative throughout the process and clearly very knowledgeable. I would definitely recommend Gosling Electrical Services. Thanks Dan!" - Craig Martin</div>
+            <div class="swiper-slide">"Danny was plucked from Facebook by chance when I needed a small lighting job done. Quick to respond and accept the job. Kept me informed about parts needed and their cost. Arrived on time, completed job in a tidy fashion at a reasonable and acceptable cost. My wife can now have a bath with the lights on!! Happy days" - Bill Chaffe</div>
+        </div>
+            <!-- Add pagination dots -->
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+
+
+
+
+    <div class="line"></div>
+
+    <div class="footer">
+        <h4 class="footer">© 2024 GOSLING ELECTRICAL SERVICES</h4>
+    </div>
+
     <script src="./js/script.js"></script>
 </body>
 </html>
