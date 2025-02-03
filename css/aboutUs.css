@@ -1,0 +1,62 @@
+*{
+
+}
+
+/* container */
+.padded-boxes {
+    display:flex;
+    flex-wrap:wrap;
+    gap:2rem;
+    max-width: 70vw;
+    margin: 6em auto 6em auto;
+    text-align: center;
+}
+
+.padded-boxes img {
+	width: 100%;
+	margin:7% 0 7% 0;
+	display: inline;
+}
+
+/* boxes */
+.padded-boxes > * {
+    width:100%;
+    background:#eee;
+    border-radius:.4rem;
+}
+
+
+/* padded content */
+.padded-boxes .padded {
+    padding:.1rem 1rem 1.5rem;
+}
+
+
+/* Social Icons Container */
+.social-icons-container {
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center the icons horizontally */
+    align-items: center; /* Align icons vertically */
+    gap: 1rem; /* Add spacing between the icons */
+    margin-top: 1rem; /* Add some space above the icons */
+}
+
+/* Individual Social Icons */
+.socialIcon {
+    height: 40px; /* Adjust the size of the icons */
+    width: 40px; /* Keep aspect ratio */
+    z-index: 10;
+    transition: transform 0.3s ease; /* Add hover effect */
+}
+
+.socialIcon:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+
+/* tablet breakpoint */
+@media (min-width:768px) {
+    .padded-boxes > * {
+        width:calc((100% - 4rem) / 3);
+    }
+}
