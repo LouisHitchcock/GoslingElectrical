@@ -1,8 +1,8 @@
-Here's a GitHub README file for your site. You can copy and paste it into a README.md file in your repository.
-🚀 Gosling Electrical Services - Website
+
+###🚀 Gosling Electrical Services - Website
 
 A professional and responsive website for Gosling Electrical Services, providing electrical solutions in Crawley.
-📌 Features
+#📌 Features
 
     Responsive Design – Optimized for desktop and mobile devices.
     Hamburger Menu – A full-screen animated mobile menu.
@@ -10,16 +10,15 @@ A professional and responsive website for Gosling Electrical Services, providing
     Swiper.js Integration – For smooth client testimonials.
     Contact Section – Easy access to get in touch.
 
-🔧 Tech Stack
+#🔧 Tech Stack
 
     HTML5
     CSS3
     JavaScript
     Swiper.js (for testimonials)
 
-📸 Screenshots
 
-📂 Project Structure
+#📂 Project Structure
 
 /project-root
 │── /css
@@ -31,7 +30,7 @@ A professional and responsive website for Gosling Electrical Services, providing
 │── index.html
 │── README.md
 
-🚀 Installation & Setup
+#🚀 Installation & Setup
 
     Clone the repository
 
@@ -41,26 +40,24 @@ A professional and responsive website for Gosling Electrical Services, providing
     Open index.html in a browser
         Simply open the file in Chrome, Firefox, or Edge.
 
-🎨 Customization
+#🎨 Customization
 
     Update index.html to modify text and links.
     Edit style.css to change branding styles.
     Modify script.js to add custom interactions.
 
-🛠 Future Enhancements
+#🛠 Future Enhancements
 
 Add an interactive contact form.
 Integrate a booking system.
 
     Improve accessibility (ARIA support).
 
-🏆 Contributors
+#🏆 Contributors
 
-    [Your Name] - Developer
+    Louis Hitchcock - Developer
     Gosling Electrical Services - Business Owner
 
-📜 License
+#📜 License
 
 This project is open-source and available under the MIT License.
-
-Let me know if you'd like anything added! 🚀
