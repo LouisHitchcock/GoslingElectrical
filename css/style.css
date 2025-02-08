@@ -391,6 +391,7 @@ header {
     padding: 40px 20px;
     max-width: 80vw;
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
 .certGrid {
@@ -401,41 +402,16 @@ header {
 }
 
 .certGridItem {
-    padding: 20px;
     border-radius: 10px;
     background: #fff;
     text-align: center;
+
 }
 
 
 .certContainer img {
     max-width: 300px;
-}
-
-/* Responsive Adjustments */
-/*@media (max-width: 768px) {
-    .hero {
-        height: 70vh;
-        padding: 15px;
-    }
-
-    .hero h1 {
-        font-size: 1.8em;
-    }
-
-    .hero p {
-        font-size: 1em;
-    }
-
-    .swiper-button-next,
-    .swiper-button-prev {
-        width: 30px;
-        height: 30px;
-    }
-
-    .testimonials-header {
-        font-size: 1.5rem;
-    }
+    width: 80%;
 }
 
 
