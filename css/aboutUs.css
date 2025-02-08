@@ -2,13 +2,36 @@
 
 }
 
+.background {
+    background-image: url(./../images/aboutUsBG.png);
+    background-repeat:no-repeat;
+    background-size: cover;
+    position: absolute;
+    width:100vw;
+    z-index: -10;
+}
+
+
+/*/* Hero Section */
+/*.hero {
+    height: 83vh;
+    background: url('../images/header.jpeg') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}*/
+
 /* container */
 .padded-boxes {
     display:flex;
     flex-wrap:wrap;
     gap:2rem;
     max-width: 70vw;
-    margin: 6em auto 6em auto;
+    margin: 1em auto 6em auto;
     text-align: center;
 }
 
@@ -54,9 +77,42 @@
 }
 
 
-/* tablet breakpoint */
+
+.meetUsTitle{
+    align-items: center;
+    text-align: center;
+    margin-top:7rem;
+    background-color:#eee;
+    width: 70vw;
+    margin: 6rem auto 0;
+    border-radius:.4rem;
+    padding: 10px 0;
+}
+
+
+.footer {
+    bottom: 0;
+    font-family: "Source Code Pro", monospace;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0px 0 50px 0;
+    text-align: center;
+    color:white;
+    margin: auto 0;
+}
+
+/* Sets the Desktop Coloumns */
 @media (min-width:768px) {
     .padded-boxes > * {
         width:calc((100% - 4rem) / 3);
+    }
+
+}
+
+
+/* Additional Responsive Styles for Mobile Compatibility */
+@media (max-width: 768px) {
+    .meetUsTitle{
+        margin: 10rem auto 0;
     }
 }
