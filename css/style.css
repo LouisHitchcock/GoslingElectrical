@@ -318,14 +318,18 @@ header {
 }
 
 .footer {
-    bottom: 0;
+    bottom: 10;
     font-family: "Source Code Pro", monospace;
     font-weight: 400;
     font-style: normal;
-    padding: 130px 0 100px 0;
+    padding: 50px 0 0 0;
     text-align: center;
+
 }
 
+.spacer{
+    padding:40px;
+}
 
 /* Separator Line Below Testimonials */
 .line {
@@ -356,6 +360,58 @@ header {
     text-align: center;
 }
 
+
+
+
+/* Social Icons Container */
+.social-icons-container {
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center the icons horizontally */
+    align-items: center; /* Align icons vertically */
+    gap: 1rem; /* Add spacing between the icons */
+    margin-top: 1rem; /* Add some space above the icons */
+}
+
+/* Individual Social Icons */
+.socialIcon {
+    height: 40px; /* Adjust the size of the icons */
+    width: 40px; /* Keep aspect ratio */
+    z-index: 10;
+    transition: transform 0.3s ease; /* Add hover effect */
+}
+
+.socialIcon:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+
+
+/* Services Section */
+.certContainer {
+    padding: 40px 20px;
+    max-width: 80vw;
+    margin: 0 auto;
+}
+
+.certGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 80vw;
+}
+
+.certGridItem {
+    padding: 20px;
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+}
+
+
+.certContainer img {
+    max-width: 300px;
+}
+
 /* Responsive Adjustments */
 /*@media (max-width: 768px) {
     .hero {
@@ -383,6 +439,8 @@ header {
 }
 
 
+
+
 /* Additional Responsive Styles for Mobile Compatibility */
 @media (max-width: 768px) {
     /* Hero Section */
@@ -401,6 +459,11 @@ header {
 
     /* Services Section */
     .servicesGrid {
+        grid-template-columns: 1fr; /* Stack services vertically */
+        gap: 15px; /* Reduce spacing */
+    }
+
+    .certGrid {
         grid-template-columns: 1fr; /* Stack services vertically */
         gap: 15px; /* Reduce spacing */
     }
