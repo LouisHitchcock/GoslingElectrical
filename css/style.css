@@ -53,6 +53,36 @@ header {
     width: auto; /* Maintain aspect ratio */
 }
 
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.main-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.tagline {
+    font-size: 0.5em;
+    color: #ccc;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.mobile-tagline {
+    font-size: 0.7em;
+    color: #ccc;
+    text-align: center;
+    margin-top: 4px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+
 .mobile-logo-icon {
     height: 80px; /* Adjust the size of the logo */
     width: auto; /* Maintain aspect ratio */
@@ -562,7 +592,7 @@ header {
     }
 
     .navbar {
-        margin-bottom: 2em;
+        margin-bottom: 2.7em;
     }
 
     body {
