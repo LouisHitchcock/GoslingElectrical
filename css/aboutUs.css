@@ -16,16 +16,15 @@
 
 /* Hero Section */
 .MeetTheTeam {
-    height: 70vh;
+    height: 80vh;
     background: url('../images/aboutUsBG.png') no-repeat center center/cover;
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
-    z-index: -10;
 }
 
 
@@ -43,7 +42,7 @@
     max-width: 70vw;
     margin: 0em auto 2em auto;
     text-align: center;
-    margin-top: 20rem;
+    margin-top: 5rem;
 }
 
 .padded-boxes img {
@@ -129,7 +128,6 @@
     left: 0;
     width: 100%;
     height: auto;
-    z-index: -1;
 }
 
 
@@ -225,7 +223,8 @@
 
 /* Hero Section */
 .MeetTheTeam {
-    height: 340vh;
+    height: auto;
+    min-height: 80vh;
 }
 
 
@@ -240,7 +239,7 @@
 
 /* Hero Section */
 .MeetTheTeam {
-    height: 115vh;
+    height: 80vh;
 }
 
 
@@ -256,7 +255,7 @@
 
 /* Hero Section */
 .MeetTheTeam {
-    height: 130vh;
+    height: 85vh;
 }
 
 
