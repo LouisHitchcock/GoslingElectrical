@@ -16,14 +16,14 @@
 
 /* Hero Section */
 .MeetTheTeam {
-    height: 80vh;
+    min-height: 100vh;
     background: url('../images/aboutUsBG.png') no-repeat center center/cover;
     position: relative;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     text-align: center;
-    padding: 20px;
+    padding: 80px 20px 20px;
     box-sizing: border-box;
 }
 
@@ -221,13 +221,6 @@
     }
 
 
-/* Hero Section */
-.MeetTheTeam {
-    height: auto;
-    min-height: 80vh;
-}
-
-
 /* container */
 .padded-boxes {
     max-width: 70vw;
@@ -237,31 +230,21 @@
 
 @media (min-width: 768px) {
 
-/* Hero Section */
-.MeetTheTeam {
-    height: 80vh;
-}
-
 
 /* container */
 .padded-boxes {
     max-width: 70vw;
-    margin-top: 4.5rem;
+    margin-top: 5rem;
     }
 }
 
 
 @media (min-width: 1200px) {
 
-/* Hero Section */
-.MeetTheTeam {
-    height: 85vh;
-}
-
 
 /* container */
 .padded-boxes {
     max-width: 70vw;
-    margin-top: -10.4rem;
+    margin-top: 5rem;
     }
 }
