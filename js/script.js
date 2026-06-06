@@ -33,3 +33,38 @@ function toggleMenu() {
     mobileMenu.classList.toggle('active');
     hamburger.classList.toggle('hidden');
 }
+
+document.querySelectorAll('.contact-form').forEach(form => {
+    form.addEventListener('submit', function(e) {
+        const name = this.querySelector('#name');
+        const email = this.querySelector('#email');
+        const message = this.querySelector('#message');
+        let valid = true;
+
+        if (name && !name.value.trim()) {
+            valid = false;
+            name.style.borderColor = '#dc2626';
+        } else if (name) {
+            name.style.borderColor = '';
+        }
+
+        if (email && !email.value.trim()) {
+            valid = false;
+            email.style.borderColor = '#dc2626';
+        } else if (email) {
+            email.style.borderColor = '';
+        }
+
+        if (message && !message.value.trim()) {
+            valid = false;
+            message.style.borderColor = '#dc2626';
+        } else if (message) {
+            message.style.borderColor = '';
+        }
+
+        if (!valid) {
+            e.preventDefault();
+            alert('Please fill in all required fields (Name, Email, Message).');
+        }
+    });
+});
