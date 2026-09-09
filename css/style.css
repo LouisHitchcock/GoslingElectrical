@@ -641,3 +641,46 @@ header {
 
 
 
+
+
+/* Areas We Cover Section */
+.areasCovered {
+    padding: 40px 20px;
+    max-width: 80vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.areasTitle {
+    padding-bottom: 20px;
+}
+
+.areasIntro {
+    max-width: 700px;
+    margin: 0 auto 1.5em;
+    font-size: 1.05em;
+    line-height: 1.6;
+}
+
+.areasList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 1.5em;
+    max-width: 900px;
+}
+
+.areasList li {
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background: #fff;
+}
+
+@media (max-width: 768px) {
+    .areasList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

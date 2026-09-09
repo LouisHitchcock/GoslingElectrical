@@ -135,3 +135,14 @@
 .gallery img {
     cursor: pointer;
 }
+
+
+/* Hall of Shame intro copy */
+.shameIntro {
+    max-width: 700px;
+    margin: 1.2em auto 0;
+    padding: 0 20px;
+    font-size: 1.05em;
+    line-height: 1.6;
+    text-align: center;
+}
