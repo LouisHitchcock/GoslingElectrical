@@ -2,11 +2,11 @@
 
 A modern, responsive website for Gosling Electrical Services, a reliable and professional electrical company serving clients across the UK.
 
-🔗 **Live Site**: [https://goslingelectricalservices.com](https://goslingelectricalservices.com)
+**Live Site**: [https://goslingelectricalservices.com](https://goslingelectricalservices.com)
 
 ---
 
-## 🚀 About the Project
+## About the Project
 
 This project showcases the online presence of Gosling Electrical Services. It was designed to be clean, accessible, and mobile-friendly, providing potential clients with information about services offered, contact details, and an easy way to get in touch.
 
@@ -19,7 +19,7 @@ The site includes:
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Frontend**: HTML, CSS, JavaScript
 - **Framework/Library**: None (Vanilla JS & CSS)
@@ -27,7 +27,7 @@ The site includes:
 
 ---
 
-## 📁 Folder Structure
+## Folder Structure
 
 ```
 /public
@@ -42,7 +42,7 @@ The site includes:
 
 
 
-## 💡 Features
+## Features
 
 - Fully responsive layout
 - Clean and minimal design
@@ -52,7 +52,7 @@ The site includes:
 
 ---
 
-## 🧑‍💻 Development
+## Development
 
 To run locally:
 
@@ -69,12 +69,12 @@ npx serve .
 
 ---
 
-## 📬 Contact
+## Contact
 
 For inquiries or collaboration, feel free to reach out via:
 
-- 📧 [danny@goslingelectricalservices.com](mailto:danny@goslingelectricalservices.com)
-- 🌐 [goslingelectricalservices.com](https://goslingelectricalservices.com)
+- [danny@goslingelectricalservices.com](mailto:danny@goslingelectricalservices.com)
+- [goslingelectricalservices.com](https://goslingelectricalservices.com)
 
 ---
 
