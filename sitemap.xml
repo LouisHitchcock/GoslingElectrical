@@ -2,18 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://goslingelectricalservices.com/index.html</loc>
-    <priority>1.0</priority>
+    <loc>https://goslingelectricalservices.com/</loc>
+    <lastmod>2026-09-09</lastmod>
   </url>
 
   <url>
     <loc>https://goslingelectricalservices.com/contact.html</loc>
-    <priority>0.9</priority>
+    <lastmod>2026-09-09</lastmod>
   </url>
 
   <url>
     <loc>https://goslingelectricalservices.com/HallofShame.html</loc>
-    <priority>0.5</priority>
+    <lastmod>2026-09-09</lastmod>
   </url>
 
 </urlset>

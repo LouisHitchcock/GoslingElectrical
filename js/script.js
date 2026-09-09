@@ -68,3 +68,12 @@ document.querySelectorAll('.contact-form').forEach(form => {
         }
     });
 });
+
+// Keeps the footer copyright year current without needing a yearly edit.
+// The markup carries a hardcoded year as a fallback if JS is unavailable.
+document.addEventListener('DOMContentLoaded', () => {
+    const yearEl = document.getElementById('copyright-year');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
+});

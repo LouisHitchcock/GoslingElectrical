@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Working files, not for indexing
+Disallow: /grid-gallery-images/uncompressed/
+Disallow: /blank.html
+Disallow: /contactOld.html
+
+Sitemap: https://goslingelectricalservices.com/sitemap.xml

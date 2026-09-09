@@ -28,7 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 const img = document.createElement('img');
                 img.dataset.src = src;
                 img.dataset.index = imageData.length - 1;
-                img.alt = caption || 'Hall of Shame image';
+                // Captions make the best alt text; without one, fall back to a
+                // numbered description so the images are not all identically labelled.
+                img.alt = caption ||
+                    `Example ${imageData.length} of dangerous electrical work found by `
+                    + `Gosling Electrical Services around Louth, Lincolnshire`;
                 img.classList.add('lazy-load');
 
                 const tempImg = new Image();
