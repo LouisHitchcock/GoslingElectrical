@@ -1,56 +1,49 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ==========================================================================
+   Site-wide components
+   Depends on css/tokens.css, which must be loaded first.
+   ========================================================================== */
 
-/* Fonts and Colors */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #ffffff;
-    color: #000;
-    overflow-x: hidden;
-}
+/* ==========================================================================
+   Header
+   --------------------------------------------------------------------------
+   Fixed and translucent so the hero photograph shows through, with a blur
+   behind it to keep the white logo and links legible over any image.
+   ========================================================================== */
 
-/* Header */
 header {
     position: fixed;
-    width: 100%;
-    top: 0;
+    inset: 0 0 auto 0;
     z-index: 100;
-    background: rgba(0, 0, 0, 0.3);
-    color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: var(--on-dark);
+    background: rgb(20 20 16 / 0.55);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border-bottom: 1px solid rgb(255 255 255 / 0.08);
 }
-
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em 2em;
+    gap: var(--space-4);
+    width: 100%;
+    max-width: var(--container);
+    margin-inline: auto;
+    padding: 0.875rem var(--gutter);
 }
 
-/* Logo */
-.navbar .logo {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #fff;
-    text-transform: uppercase;
-}
+/* --- Logo ---------------------------------------------------------------- */
 
-/* Logo Styling */
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* Add spacing between elements if needed */
-    text-decoration: none; /* Remove underline */
+    gap: 0.75rem;
+    text-decoration: none;
 }
 
 .logo-icon {
-    height: 40px; /* Adjust the size of the logo */
-    width: auto; /* Maintain aspect ratio */
+    height: 42px;
+    width: auto;
 }
 
 .logo-text {
@@ -60,561 +53,585 @@ header {
 }
 
 .main-title {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #fff;
-    text-transform: uppercase;
+    font-size: 1.0625rem;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    color: var(--on-dark);
 }
 
 .tagline {
-    font-size: 0.5em;
-    color: #ccc;
-    font-weight: bold;
-    letter-spacing: 0.5px;
+    font-size: 0.75rem;
+    font-weight: 450;
+    letter-spacing: 0.01em;
+    color: var(--on-dark-muted);
+}
+
+.mobile-logo {
+    display: none;
+}
+
+.mobile-logo-icon {
+    height: 46px;
+    width: auto;
 }
 
 .mobile-tagline {
-    font-size: 0.7em;
-    color: #ccc;
+    font-size: 0.7rem;
+    font-weight: 450;
+    letter-spacing: 0.01em;
+    color: var(--on-dark-muted);
     text-align: center;
-    margin-top: 4px;
-    font-weight: 300;
-    letter-spacing: 0.5px;
+    margin-top: 3px;
 }
 
+/* --- Desktop navigation -------------------------------------------------- */
 
-.mobile-logo-icon {
-    height: 80px; /* Adjust the size of the logo */
-    width: auto; /* Maintain aspect ratio */
+/* #desktop-menu is the <nav>; the list inside it does the layout */
+#desktop-menu ul {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    list-style: none;
 }
 
-/* Hamburger Menu */
+#desktop-menu li a {
+    display: block;
+    padding: 0.5rem 0.9rem;
+    border-radius: var(--radius-pill);
+    color: var(--on-dark);
+    font-size: var(--text-sm);
+    font-weight: 550;
+    text-decoration: none;
+    transition: background 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+#desktop-menu li a:hover {
+    background: rgb(255 255 255 / 0.14);
+}
+
+/* The active page reads as a filled pill rather than an underline */
+#desktop-menu li a.active {
+    background: var(--accent);
+    color: var(--accent-ink);
+}
+
+/* --- Hamburger and mobile menu ------------------------------------------ */
+
 .hamburger {
-    display: none; /* Hidden on desktop */
-    font-size: 3em;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: rgb(255 255 255 / 0.12);
+    color: var(--on-dark);
+    font-size: 1.4rem;
+    line-height: 1;
     cursor: pointer;
-    color: #fff;
-    padding: 10px;
-    background: transparent;
-    border: none;
+    z-index: 101;
+    transition: background 0.2s var(--ease);
 }
 
-/* Hide the hamburger when the menu is open */
+.hamburger:hover {
+    background: rgb(255 255 255 / 0.22);
+}
+
 .hamburger.hidden {
     display: none;
 }
 
-
-/* Mobile Navigation (Full-Screen Animated Menu) */
 #mobile-menu {
     position: fixed;
-    top: -100vh; /* Start hidden above the screen */
+    top: -100vh;
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.95); /* Dark background */
+    z-index: 100;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: rgb(20 20 16 / 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     opacity: 0;
-    transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transition: top 0.45s var(--ease), opacity 0.45s var(--ease);
 }
 
-/* Menu links */
-#mobile-menu ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-}
-
-#mobile-menu li {
-    margin: 20px 0;
-}
-
-#mobile-menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.8em;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
-}
-
-#mobile-menu a:hover {
-    color: #f9c74f; /* Highlight color */
-}
-
-/* Show menu when active */
 #mobile-menu.active {
     top: 0;
     opacity: 1;
 }
 
-/* Hamburger Menu */
-.hamburger {
-    display: none;
-    font-size: 2em;
-    cursor: pointer;
-    color: white;
-    padding: 10px;
-    z-index: 101;
+#mobile-menu ul {
+    list-style: none;
+    text-align: center;
 }
 
-/* Close Button */
+#mobile-menu li {
+    margin: var(--space-3) 0;
+}
+
+#mobile-menu a {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: var(--radius-pill);
+    color: var(--on-dark);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+#mobile-menu a:hover,
+#mobile-menu li a.active {
+    color: var(--accent);
+}
+
 .close-menu {
     position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 3em;
-    color: white;
+    top: 1.25rem;
+    right: 1.5rem;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-pill);
+    background: rgb(255 255 255 / 0.12);
+    color: var(--on-dark);
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
-/* Make sure the hamburger appears only on mobile */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
 
-    #desktop-menu {
-        display: none;
-    }
-}
+/* ==========================================================================
+   Hero
+   --------------------------------------------------------------------------
+   The photograph runs full bleed with a gradient scrim over it, rather than
+   sitting behind a translucent grey box. Height is driven by content with a
+   minimum, so nothing crops on short viewports.
+   ========================================================================== */
 
-
-
-/* Desktop Navigation Menu */
-#desktop-menu {
-    display: flex;
-    list-style: none;
-    gap: 2em;
-    margin: 0;
-}
-
-#desktop-menu li {
-    display: inline;
-}
-
-#desktop-menu li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1em;
-    transition: color 0.3s ease;
-    padding: 0.5em 1em;
-}
-
-#desktop-menu li a:hover {
-    color: #f9c74f;
-}
-
-
-/* Default: Hide mobile logo */
-.mobile-logo {
-    display: none;
-}
-
-
-
-/* Hero Section */
 .hero {
-    height: 83vh;
-    background: url('../images/header.jpeg') no-repeat center center/cover;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: min(84svh, 780px);
+    padding: calc(var(--space-7) + 3rem) var(--gutter) var(--space-7);
     text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
+    background: url('../images/header.jpeg') no-repeat center center/cover;
+    isolation: isolate;
+}
+
+/* Scrim: darkest at the top behind the header, lifting towards the middle */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(to bottom,
+            rgb(16 16 12 / 0.78) 0%,
+            rgb(16 16 12 / 0.45) 38%,
+            rgb(16 16 12 / 0.55) 100%);
 }
 
 .hero .overlay {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    border-radius: 8px;
-    color: #fff;
-    max-width: 600px;
+    max-width: 46rem;
+    color: var(--on-dark);
 }
 
 .hero h1 {
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
+    font-size: var(--text-hero);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-shadow: 0 2px 24px rgb(0 0 0 / 0.35);
 }
 
 .hero p {
-    font-size: 1.2em;
-    margin-bottom: 1.5em;
+    max-width: 34rem;
+    margin: var(--space-4) auto var(--space-5);
+    font-size: var(--text-lg);
+    line-height: var(--leading-snug);
+    color: var(--on-dark-muted);
 }
-
-.hero .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: transparent;
-    border: 2px solid #fff;
-    color: #fff;
-    text-decoration: none;
-    font-size: 1em;
-    transition: all 0.3s ease;
-    border-radius: 5px;
-}
-
-.hero .btn:hover {
-    background: #fff;
-    color: #000;
-}
-
 
 .hero-phone {
-    margin-top: 1rem;
+    margin-top: var(--space-3);
 }
 
-.hero-phone a {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #f9c74f;
-    color: #1a1a1a;
-    text-decoration: none;
-    font-size: 1.1em;
-    font-weight: 700;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-}
 
-.hero-phone a:hover {
-    background: #e0a800;
-    color: #000;
-}
+/* ==========================================================================
+   Cards: services and certifications
+   ========================================================================== */
 
-#desktop-menu li a.active {
-    color: #f9c74f;
-    border-bottom: 2px solid #f9c74f;
-}
-
-#mobile-menu li a.active {
-    color: #f9c74f;
-}
-
-/* Swoop */
-.swoop {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+.servicesContainer,
+.certContainer,
+.testimonials {
     width: 100%;
-    height: auto;
-    z-index: 1;
+    max-width: var(--container);
+    margin-inline: auto;
+    padding: calc(var(--section-y) / 2) var(--gutter);
 }
+
+.servicesTitle,
+.testimonials-header,
+.certTitle {
+    max-width: var(--container-narrow);
+    margin: 0 auto var(--space-5);
+    text-align: center;
+    font-size: var(--text-3xl);
+}
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-3);
+}
+
+.serviceGridItem {
+    padding: var(--space-4);
+    border: 0;
+    border-radius: var(--radius);
+    background: var(--surface-card);
+    box-shadow: var(--shadow-sm);
+    text-align: left;
+    transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.serviceGridItem:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.serviceGridItem h3 {
+    margin-bottom: var(--space-2);
+    font-size: var(--text-lg);
+}
+
+/* The service copy is written with hard line breaks in the source, which
+   pre-line preserves as separate lines. */
+.serviceGridItem p {
+    color: var(--ink-muted);
+    font-size: var(--text-sm);
+    white-space: pre-line;
+}
+
+.certGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-4);
+}
+
+.certGridItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-5) var(--space-4);
+    border-radius: var(--radius);
+    background: var(--surface-card);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+}
+
+.certContainer img {
+    max-width: 168px;
+    width: 60%;
+    height: auto;
+    margin-bottom: var(--space-2);
+}
+
+.certGridItem p {
+    color: var(--ink-muted);
+    font-size: var(--text-sm);
+}
+
+
+/* ==========================================================================
+   Testimonials
+   ========================================================================== */
 
 .testimonials {
-    max-width: 80vw;
-
-    justify-content: center;
-    align-items: center;
-    margin:auto;
     overflow-x: hidden;
 }
 
+/* Swiper 11 clips overflow on its own .swiper class, but this markup predates
+   that and uses .swiper-container, so the neighbouring slides need clipping
+   here or they spill past the section. Padding leaves room for the card
+   shadow, which clipping would otherwise cut off. */
+.swiper-container {
+    /* clip rather than hidden, so the card shadow is still visible above and
+       below while the neighbouring slides are cut off at the sides */
+    overflow-x: clip;
+    padding-block: var(--space-3);
+}
 
-/* Testimonials Container */
 .swiper-slide {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 100%;
     height: auto;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    padding: 20px;
-    box-sizing: border-box;
+    padding: var(--space-5) var(--space-4);
+    border-radius: var(--radius-lg);
+    background: var(--surface-card);
+    box-shadow: var(--shadow);
+    color: var(--ink);
+    font-size: var(--text-xl);
+    line-height: var(--leading-snug);
     text-align: center;
-    background-color: #fff;
-    color: #000;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-wrap: pretty;
+    box-sizing: border-box;
+    transition: opacity 0.6s var(--ease);
+}
+
+/* Only the active slide is visible. Hiding just prev and next left the
+   further loop slides at full opacity, which showed as a sliver at the edge.
+   Scoped to .swiper-initialized, the class Swiper adds to the container, so
+   that with JavaScript unavailable the testimonials are all still readable
+   rather than all hidden. */
+.swiper-initialized .swiper-slide {
+    opacity: 0;
+}
+
+.swiper-initialized .swiper-slide.swiper-slide-active,
+.swiper-initialized .swiper-slide.activeTestimonial {
     opacity: 1;
-    transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Smooth swipe and fade effect */
-        overflow-x: hidden;
+}
+
+.swiper-pagination {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+}
+
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-pill);
+    background: var(--ink-faint);
+    opacity: 0.35;
+    cursor: pointer;
+    transition: opacity 0.2s var(--ease), background 0.2s var(--ease),
+                width 0.2s var(--ease);
+}
+
+.swiper-pagination-bullet-active {
+    width: 26px;
+    background: var(--accent);
+    opacity: 1;
 }
 
 
-.contactForm{
-    max-width: 60vw;
-    margin-right:auto;
-    margin-left:auto;
+/* ==========================================================================
+   Contact form
+   ========================================================================== */
 
+.contactForm {
+    width: 100%;
+    max-width: 42rem;
+    margin-inline: auto;
+    padding: calc(var(--section-y) / 2) var(--gutter);
 }
 
 .contact-intro > * + * {
-    margin-top: 1rem;
+    margin-top: var(--space-2);
 }
 
 .contact-title {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    font-weight: 700;
+    font-size: var(--text-3xl);
+    font-weight: 650;
     text-align: center;
-
 }
 
 .contact-description {
-    color: rgb(107 114 128);
+    color: var(--ink-muted);
     text-align: center;
+    font-size: var(--text-lg);
 }
 
+.contact-form {
+    margin-top: var(--space-5);
+    padding: var(--space-5);
+    border-radius: var(--radius-lg);
+    background: var(--surface-card);
+    box-shadow: var(--shadow);
+}
 
 .form-group-container {
     display: grid;
-    gap: 1rem;
-    margin-top: 2rem;
-
+    gap: var(--space-3);
 }
+
 .form-group {
     display: flex;
     flex-direction: column;
 }
 
 .form-label {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
+    font-size: var(--text-sm);
+    font-weight: 550;
 }
 
 .form-input,
 .form-textarea {
-    padding: 0.5rem;
-    border: 1px solid #e5e7eb;
-    display: flex;
-    height: 2.5rem;
     width: 100%;
-    border-radius: 0.375rem;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+    padding: 0.75rem 0.875rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    font: inherit;
+    font-size: var(--text-sm);
+    color: var(--ink);
+    transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease),
+                background 0.2s var(--ease);
+}
+
+.form-input {
+    height: 3rem;
+}
+
+.form-textarea {
+    min-height: 8.5rem;
+    resize: vertical;
 }
 
 .form-input::placeholder,
-.form-textarea:focus-visible {
-    color: #6b7280;
+.form-textarea::placeholder {
+    color: var(--ink-faint);
+}
+
+.form-input:hover,
+.form-textarea:hover {
+    border-color: var(--ink-faint);
 }
 
 .form-input:focus-visible,
 .form-textarea:focus-visible {
-    outline: 2px solid #f9c74f;
-    outline-offset: 2px;
-}
-
-.form-textarea {
-    min-height: 120px;
+    outline: none;
+    background: var(--surface-card);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-wash);
 }
 
 .form-submit {
     width: 100%;
-    margin-top: 1.2rem;
-    background-color: #f9c74f;
-    color: #1a1a1a;
-    padding: 13px 5px;
-    border-radius: 0.375rem;
-    border: none;
+    margin-top: var(--space-4);
+    padding: 0.9375rem 1.5rem;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: var(--accent);
+    color: var(--accent-ink);
+    font: inherit;
+    font-size: var(--text-base);
+    font-weight: 600;
     cursor: pointer;
-    font-size: 1rem;
+    transition: background 0.2s var(--ease), transform 0.2s var(--ease),
+                box-shadow 0.2s var(--ease);
 }
 
 .form-submit:hover {
-    background-color: #000;
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
 }
 
 
-
-/* Fading Effect for Non-Active Slides */
-.swiper-slide.swiper-slide-prev,
-.swiper-slide.swiper-slide-next {
-    opacity: 0; /* Fade out non-active slides */
-}
-
-/* The currently active testimonial */
-.swiper-slide.activeTestimonial {
-    opacity: 1; /* Fully visible */
-}
-
-/* Pagination Dots */
-.swiper-pagination {
-    position: relative; /* Positioned below testimonials */
-    display: flex;
-    justify-content: center;
-    gap: 8px; /* Spacing between dots */
-    margin-top: 30px;
-}
-
-.swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-    background: #ccc; /* Default dot color */
-    border-radius: 50%;
-    opacity: 0.6;
-    transition: opacity 0.3s ease, background 0.3s ease;
-    cursor: pointer;
-}
-
-.swiper-pagination-bullet-active {
-    background: #383838; /* Active dot color */
-    opacity: 1;
-}
-
-.testimonials-header {
-    padding-bottom:20px;
-}
-
-.servicesTitle{
-    padding-bottom:20px;
-}
+/* ==========================================================================
+   Footer
+   ========================================================================== */
 
 .footer {
-    bottom: 10;
-    font-family: "Source Code Pro", monospace;
-    font-weight: 400;
-    font-style: normal;
-    padding: 50px 0 0 0;
-    text-align: center;
-
-}
-
-.spacer{
-    padding:40px;
-}
-
-/* Separator Line Below Testimonials */
-.line {
-    margin: 20px auto;
-    border-bottom: 5px solid #000;
-    width: 90%;
-}
-
-/* Services Section */
-.servicesContainer {
-    padding: 40px 20px;
-    max-width: 80vw;
-    margin: 0 auto;
-}
-
-.servicesGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 80vw;
-}
-
-.serviceGridItem {
-    padding: 20px;
-    border: 2px solid #000;
-    border-radius: 10px;
-    background: #fff;
+    padding: var(--space-6) var(--gutter) var(--space-5);
+    border-top: 1px solid var(--hairline);
+    background: var(--surface-sunken);
     text-align: center;
 }
 
+.footer h4 {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--ink-muted);
+}
 
+.footer p {
+    margin-top: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--ink-muted);
+}
 
+.footer a {
+    color: var(--ink);
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    transition: color 0.2s var(--ease);
+}
 
-/* Social Icons Container */
+.footer a:hover {
+    color: var(--accent-hover);
+}
+
+/* Areas we cover: the machine-readable town list lives in the JSON-LD
+   areaServed, this is just a quiet human-readable echo of it. */
+.areasLine {
+    max-width: var(--container-narrow);
+    margin: var(--space-3) auto 0;
+    font-size: var(--text-xs);
+    line-height: 1.5;
+    color: var(--ink-faint);
+}
+
+.spacer {
+    padding: var(--space-3);
+}
+
+/* --- Social icons -------------------------------------------------------- */
+
 .social-icons-container {
-    display: flex; /* Enable flexbox */
-    justify-content: center; /* Center the icons horizontally */
-    align-items: center; /* Align icons vertically */
-    gap: 1rem; /* Add spacing between the icons */
-    margin-top: 1rem; /* Add some space above the icons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
 }
 
-/* Individual Social Icons */
 .socialIcon {
-    height: 40px; /* Adjust the size of the icons */
-    width: 40px; /* Keep aspect ratio */
-    z-index: 10;
-    transition: transform 0.3s ease; /* Add hover effect */
+    height: 40px;
+    width: 40px;
+    padding: 8px;
+    border-radius: var(--radius-pill);
+    background: var(--surface-card);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
 
 .socialIcon:hover {
-    transform: scale(1.2); /* Slightly enlarge on hover */
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
 }
 
 
+/* ==========================================================================
+   Small screens
+   ========================================================================== */
 
-/* Services Section */
-.certContainer {
-    padding: 40px 20px;
-    max-width: 80vw;
-    margin: 0 auto;
-    overflow-x: hidden;
-}
-
-.certGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 80vw;
-}
-
-.certGridItem {
-    border-radius: 10px;
-    background: #fff;
-    text-align: center;
-
-}
-
-
-.certContainer img {
-    max-width: 300px;
-    width: 80%;
-    height: auto;
-}
-
-
-
-
-/* Additional Responsive Styles for Mobile Compatibility */
 @media (max-width: 768px) {
-    /* Hero Section */
-    .hero {
-        height: 70vh; /* Reduce height for smaller screens */
-        padding: 20px; /* Adjust padding for spacing */
-    }
-
-    .hero h1 {
-        font-size: 1.8em; /* Reduce text size for mobile */
-    }
-
-    .hero p {
-        font-size: 1em; /* Adjust paragraph size */
-    }
-
-    /* Services Section */
-    .servicesGrid {
-        grid-template-columns: 1fr; /* Stack services vertically */
-        gap: 15px; /* Reduce spacing */
-    }
-
-    .certGrid {
-        grid-template-columns: 1fr; /* Stack services vertically */
-        gap: 15px; /* Reduce spacing */
-    }
-
-    /* Testimonials Section */
-    .swiper-slide {
-        font-size: 1rem; /* Adjust font size for better readability */
-        padding: 15px; /* Adjust padding for spacing */
-    }
-
-    /* Align Pagination Dots Below Testimonials */
-    .swiper-pagination {
-        bottom: 10px; /* Adjust positioning of dots */
-    }
-
-    /* Testimonial Navigation Dots */
-    .swiper-pagination-bullet {
-        width: 8px; /* Smaller dots for mobile */
-        height: 8px;
-    }
-
     .hamburger {
-        display: flex; /* Show hamburger on mobile */
+        display: flex;
     }
 
     #desktop-menu {
-        display: none; /* Hide desktop menu on mobile */
+        display: none;
     }
 
     .logo {
@@ -622,35 +639,23 @@ header {
     }
 
     .mobile-logo {
-        height: 40px; /* Adjust the size of the logo */
         display: block;
     }
 
     .navbar {
-        margin-bottom: 2.7em;
+        padding: 0.625rem var(--gutter);
     }
 
-    body {
-        position: relative;
-        width: 100vw;
-        overflow-x: hidden;
+    .hero {
+        min-height: min(76svh, 620px);
     }
 
-}
+    .swiper-slide {
+        font-size: var(--text-lg);
+        padding: var(--space-4) var(--space-3);
+    }
 
-
-
-
-
-
-
-/* Areas We Cover - slim footer line rather than a visible grid, with the
-   machine-readable town list living in the JSON-LD areaServed instead. */
-.areasLine {
-    max-width: 700px;
-    margin: 0.8em auto 0;
-    padding: 0 20px;
-    font-size: 0.85em;
-    line-height: 1.5;
-    opacity: 0.75;
+    .contact-form {
+        padding: var(--space-4);
+    }
 }
