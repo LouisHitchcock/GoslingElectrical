@@ -390,12 +390,17 @@ header {
     transition: opacity 0.6s var(--ease);
 }
 
-.swiper-slide.swiper-slide-prev,
-.swiper-slide.swiper-slide-next {
+/* Only the active slide is visible. Hiding just prev and next left the
+   further loop slides at full opacity, which showed as a sliver at the edge.
+   Scoped to .swiper-initialized, the class Swiper adds to the container, so
+   that with JavaScript unavailable the testimonials are all still readable
+   rather than all hidden. */
+.swiper-initialized .swiper-slide {
     opacity: 0;
 }
 
-.swiper-slide.activeTestimonial {
+.swiper-initialized .swiper-slide.swiper-slide-active,
+.swiper-initialized .swiper-slide.activeTestimonial {
     opacity: 1;
 }
 
