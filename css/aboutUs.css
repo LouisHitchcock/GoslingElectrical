@@ -248,3 +248,20 @@
     margin-top: 5rem;
     }
 }
+
+
+/* Team page heading (contact.html)
+   .MeetTheTeam is a flex row, so the heading and the cards are wrapped in
+   .teamContent to keep .padded-boxes sizing as it was. */
+.MeetTheTeam .teamContent {
+    width: 100%;
+}
+
+.MeetTheTeam .meetUsTitle {
+    margin: 2rem auto 0;
+}
+
+/* Tightens the gap to the cards now that a heading sits above them. */
+.MeetTheTeam .padded-boxes {
+    margin-top: 2rem;
+}
